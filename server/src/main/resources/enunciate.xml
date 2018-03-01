@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<enunciate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://enunciate.webcohesion.com/schemas/enunciate-2.10.0.xsd">
+    <title>Playground</title>
+
+    <modules>
+        <jaxws disabled="false" datatype-detection="aggressive" useSourceParameterNames="true"/>
+        <docs title="" includeExampleJson="true" />
+    </modules>
+</enunciate>
