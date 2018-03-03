@@ -19,8 +19,6 @@ public class BeerRestTest {
     @Autowired
     private BeerRest beerRest;
 
-
-
     @Test
     public void getBeers() throws Exception {
         ResponseEntity<List<Beer>> listResponseEntity = beerRest.get();

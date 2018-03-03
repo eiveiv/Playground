@@ -36,7 +36,7 @@
                 </executions>
                 <configuration>
                     <!-- the directory where to put the docs -->
-                    <docsDir>${project.build.directory}/docs</docsDir>
+                    <docsDir>${project.build.directory}/classes/static</docsDir>
                     <configFile>${project.basedir}/src/main/resources/enunciate.xml</configFile>
                 </configuration>
             </plugin>

@@ -25,7 +25,9 @@
         <spring-cloud.version>Dalston.SR4</spring-cloud.version>
     </properties>
 
-
+    <modules>
+        <module>server</module>
+    </modules>
 
     <dependencies>
         <dependency>
@@ -71,11 +73,6 @@
             <scope>runtime</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.demo</groupId>
-            <artifactId>server</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -96,6 +93,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
