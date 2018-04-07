@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import server.domain.Beer;
-import server.rest.BeerRest;
+import server.rest.BeersRest;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ public class BeerRestTest {
 
 
     @Autowired
-    private BeerRest beerRest;
+    private BeersRest beerRest;
 
     @Test
     public void getBeers() throws Exception {

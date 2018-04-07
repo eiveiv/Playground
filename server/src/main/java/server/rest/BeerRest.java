@@ -4,11 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-import server.dao.BeerEndpoint;
+import org.springframework.web.bind.annotation.*;
 import server.domain.Beer;
 import server.service.BeerService;
 
@@ -31,6 +27,12 @@ public class BeerRest {
     public void post(@Valid @RequestBody Beer beer) {
         System.out.println(beer.toString());
         beerEndpoint.addBeer(beer);
+    }
+
+    @GetMapping(path = "/beer/{id}")
+    public ResponseEntity<Beer> get(@PathVariable Integer id) {
+        final Beer beer = beerService.getBeer(id);
+        return new ResponseEntity<>(beer, HttpStatus.OK);
     }
 
 
