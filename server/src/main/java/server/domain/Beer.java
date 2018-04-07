@@ -10,6 +10,16 @@ public class Beer {
     private String name;
     private double alcoholPercentage;
 
+    public Beer() {
+    }
+
+    public Beer(int id, String brand, String name, double alcoholPercentage) {
+        this.id = id;
+        this.brand = brand;
+        this.name = name;
+        this.alcoholPercentage = alcoholPercentage;
+    }
+
     public int getId() {
         return id;
     }

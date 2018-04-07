@@ -17,6 +17,7 @@ public class BeerEndpoint extends JdbcDaoSupport {
     private static final String GET_ALL_BEERS = "select * from devdev.beers";
     private static final String INSERT_BEER = "insert into devdev.beers(brand, name, alchohol_percentage) values(?,?,?)";
     private static final String DELETE_BEER = "delete from devdev.beers where id = ?";
+    private static final String SELECT_BEER = "select * from devdev.beers where id = ?";
 
     @Autowired
     private DataSource dataSource;
@@ -40,6 +41,10 @@ public class BeerEndpoint extends JdbcDaoSupport {
 
     public void deleteBeer(int beerId) {
         getJdbcTemplate().update(DELETE_BEER, beerId);
+    }
+
+    public Beer getBeer(int beerId) {
+        return (Beer) getJdbcTemplate().queryForObject(SELECT_BEER, new Object[]{beerId}, new BeerMapper());
     }
 }
 
