@@ -4,7 +4,7 @@ import server.dao.BeerEndpoint
 import server.domain.Beer
 import spock.lang.Specification
 
-class FirstSpecification extends Specification {
+class BeerTest extends Specification {
 
     def beerEndpont = Mock(BeerEndpoint)
 
