@@ -1,30 +1,37 @@
 package server.domain;
 
-import javax.validation.constraints.NotNull;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "beers", schema="devdev")
 public class Beer {
 
-    private int id;
-    @NotNull
+    @Id
+    private Integer id;
     private String brand;
     private String name;
-    private double alcoholPercentage;
+
+    @Column(name = "alchohol_percentage")
+    private double alcohol_percentage;
 
     public Beer() {
     }
 
-    public Beer(int id, String brand, String name, double alcoholPercentage) {
+    public Beer(Integer id, String brand, String name, double alcohol_percentage) {
         this.id = id;
         this.brand = brand;
         this.name = name;
-        this.alcoholPercentage = alcoholPercentage;
+        this.alcohol_percentage = alcohol_percentage;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -44,21 +51,11 @@ public class Beer {
         this.name = name;
     }
 
-    public double getAlcoholPercentage() {
-        return alcoholPercentage;
+    public double getAlcohol_percentage() {
+        return alcohol_percentage;
     }
 
-    public void setAlcoholPercentage(double alcoholPercentage) {
-        this.alcoholPercentage = alcoholPercentage;
-    }
-
-    @Override
-    public String toString() {
-        return "Beer{" +
-                "id=" + id +
-                ", brand='" + brand + '\'' +
-                ", name='" + name + '\'' +
-                ", alcoholPercentage=" + alcoholPercentage +
-                '}';
+    public void setAlcohol_percentage(double alcohol_percentage) {
+        this.alcohol_percentage = alcohol_percentage;
     }
 }

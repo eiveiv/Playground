@@ -15,18 +15,12 @@ import java.util.List;
 public class BeerRest {
 
     @Autowired
-    private BeerEndpoint beerEndpoint;
-
-    @GetMapping(path = "/beers")
-    public ResponseEntity<List<Beer>> get() {
-        final List<Beer> beers = beerEndpoint.getBeers();
-        return new ResponseEntity<>(beers, HttpStatus.OK);
-    }
+    private BeerService beerService;
 
     @PostMapping(path = "/beer", consumes = MediaType.APPLICATION_JSON_VALUE)
     public void post(@Valid @RequestBody Beer beer) {
         System.out.println(beer.toString());
-        beerEndpoint.addBeer(beer);
+        beerService.addBeer(beer);
     }
 
     @GetMapping(path = "/beer/{id}")
