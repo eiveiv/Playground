@@ -7,6 +7,7 @@ import server.dao.IBeerDao;
 import server.domain.Beer;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -38,6 +39,12 @@ public class BeerService {
 
     public void addBeer(Beer beer) {
         beerDao.save(beer);
+    }
+
+    public static Beer getHighestPercentage (List<Beer> beers) {
+        return beers.stream()
+                .max(Comparator.comparing(Beer::getAlcohol_percentage))
+                .get();
     }
 
 }

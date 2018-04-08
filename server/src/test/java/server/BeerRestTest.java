@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import server.domain.Beer;
 import server.rest.BeersRest;
+import server.service.BeerService;
 
 import java.util.List;
 
@@ -18,6 +19,9 @@ public class BeerRestTest {
 
     @Autowired
     private BeersRest beerRest;
+
+    @Autowired
+    private BeerService beerService;
 
     @Test
     public void getBeers() throws Exception {
